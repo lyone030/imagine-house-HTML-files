@@ -107,7 +107,7 @@
       <a href="home.html" class="ulink hover:text-white">Home</a>
       <a href="history.html" class="ulink hover:text-white">History</a>
       <a href="capabilities.html" class="ulink hover:text-white">Capabilities</a>
-      <a href="liore-group.html" class="ulink hover:text-white">Liore Group</a>
+      <a href="food&beverage.html" class="ulink hover:text-white">Food &amp; Beverage</a>
       <a href="contact.html" class="ulink hover:text-white" style="color:var(--bronze)">Contact</a>
     </nav>
     <button id="navToggle" class="lg:hidden flex flex-col gap-1.5 p-2" aria-label="Open menu" aria-expanded="false">
@@ -122,7 +122,7 @@
     <a href="home.html" class="ulink">Home</a>
     <a href="history.html" class="ulink">History</a>
     <a href="capabilities.html" class="ulink">Capabilities</a>
-    <a href="liore-group.html" class="ulink">Liore Group</a>
+    <a href="food&beverage.html" class="ulink">Food &amp; Beverage</a>
     <a href="contact.html" class="ulink">Contact</a>
   </nav>
   <div class="mt-12 eyebrow">496 Broome St · SoHo · NYC</div>
@@ -261,6 +261,12 @@
               <div class="field-error-msg">Choose a budget range.</div>
             </div>
 
+            <div class="field sm:col-span-2">
+              <label for="f-referral">Who referred you?</label>
+              <input id="f-referral" name="referral" type="text" required placeholder="e.g. a friend, Instagram, a past event…" />
+              <div class="field-error-msg">Please let us know who referred you.</div>
+            </div>
+
           </div>
 
           <div class="pt-4 border-t border-white/10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5">
@@ -347,6 +353,7 @@
     if(!data.contactName?.trim())set('f-contact-name');
     if(!data.email||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email))set('f-email');
     if(!data.budget)set('f-budget');
+    if(!data.referral?.trim())set('f-referral');
     return errors;}
 
   function genReference(){const now=new Date();const yy=String(now.getFullYear()).slice(2);const rand=Math.random().toString(36).slice(2,6).toUpperCase();return `IH-${yy}${String(now.getMonth()+1).padStart(2,'0')}-${rand}`;}
